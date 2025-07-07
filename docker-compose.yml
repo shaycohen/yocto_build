@@ -1,0 +1,14 @@
+services:
+  yocto:
+    build: .
+    image: yocto-ubuntu20
+    container_name: yocto-build
+    environment: 
+      ARG_MACHINE: imx8mmevk
+      ARG_DISTRO: fsl-imx-xwayland
+    volumes:
+      - ./workspace:/workspace
+    working_dir: /workspace
+    tty: true
+    stdin_open: true
+
